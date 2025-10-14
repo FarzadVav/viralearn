@@ -1,26 +1,63 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@font-face {
+  font-family: "morabba";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/morabba/morabba-regular.ttf");
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "morabba-medium";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/morabba/morabba-medium.ttf");
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@font-face {
+  font-family: "morabba-bold";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/morabba/morabba-semi-bold.ttf");
+}
+
+@font-face {
+  font-family: "yekan-bakh";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/yekan-bakh/yekan-bakh-regular.ttf");
+}
+
+@font-face {
+  font-family: "yekan-bakh-medium";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/yekan-bakh/yekan-bakh-medium.ttf");
+}
+
+@font-face {
+  font-family: "yekan-bakh-bold";
+  font-weight: normal;
+  font-display: swap;
+  src: url("/yekan-bakh/yekan-bakh-semi-bold.ttf");
+}
+
+@theme {
+  --font-*: initial;
+  --font-morabba: "morabba";
+  --font-morabba-medium: "morabba-medium";
+  --font-morabba-bold: "morabba-bold";
+  --font-yekan-bakh: "yekan-bakh";
+  --font-yekan-bakh-medium: "yekan-bakh-medium";
+  --font-yekan-bakh-bold: "yekan-bakh-bold";
+}
+
+@layer base {
+  body {
+    @apply font-yekan-bakh;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@utility container {
+  @apply max-w-7xl mx-auto px-3;
 }
