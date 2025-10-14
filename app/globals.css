@@ -43,7 +43,7 @@
   --radius: 0.625rem;
   --background: #070708;
   --foreground: #f2f2f3;
-  --card: #8f959a1a;
+  --card: #8f959a;
   --card-foreground: #f2f2f3;
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
@@ -178,9 +178,9 @@
 }
 
 @utility glassy-card {
-  @apply bg-card/50 backdrop-blur-md;
+  @apply bg-card/10 backdrop-blur-xs;
 }
 
 @utility bordered-glassy-card {
-  @apply bg-card/50 backdrop-blur-md border border-card;
+  @apply glassy-card border border-card/25;
 }
