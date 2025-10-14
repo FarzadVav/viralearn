@@ -8,6 +8,7 @@
     "ProductDemo": "درخواست دمو",
     "Home": "خانه",
     "Features": "امکانات",
+    "OtherFeatures": "سایر امکانات",
     "Samples": "نمونه کار ها",
     "Pricing": "تعرفه ها",
     "Articles": "اخبار و مقالات",
@@ -16,6 +17,7 @@
     "CallingUs": "تماس با ما"
   },
   "HomePage": {
-    "heroSectionBadge": "ساده، کاربردی وهمچنان مقرون به صرفه ..."
+    "HeroSectionBadge": "ساده، کاربردی وهمچنان مقرون به صرفه ...",
+    "WithOutViralearn": "پلتفرمتان را بدون ویرا لرن  تصور کنید"
   }
 }
