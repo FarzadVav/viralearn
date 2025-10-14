@@ -5,44 +5,38 @@
 
 @font-face {
   font-family: "morabba";
-  font-weight: normal;
   font-display: swap;
-  src: url("/morabba/morabba-regular.ttf");
+  src: url("/fonts/morabba/morabba-regular.ttf");
 }
 
 @font-face {
   font-family: "morabba-medium";
-  font-weight: normal;
   font-display: swap;
-  src: url("/morabba/morabba-medium.ttf");
+  src: url("/fonts/morabba/morabba-medium.ttf");
 }
 
 @font-face {
   font-family: "morabba-bold";
-  font-weight: normal;
   font-display: swap;
-  src: url("/morabba/morabba-semi-bold.ttf");
+  src: url("/fonts/morabba/morabba-semi-bold.ttf");
 }
 
 @font-face {
   font-family: "yekan-bakh";
-  font-weight: normal;
   font-display: swap;
-  src: url("/yekan-bakh/yekan-bakh-regular.ttf");
+  src: url("/fonts/yekan-bakh/yekan-bakh-regular.ttf");
 }
 
 @font-face {
   font-family: "yekan-bakh-medium";
-  font-weight: normal;
   font-display: swap;
-  src: url("/yekan-bakh/yekan-bakh-medium.ttf");
+  src: url("/fonts/yekan-bakh/yekan-bakh-medium.ttf");
 }
 
 @font-face {
   font-family: "yekan-bakh-bold";
-  font-weight: normal;
   font-display: swap;
-  src: url("/yekan-bakh/yekan-bakh-semi-bold.ttf");
+  src: url("/fonts/yekan-bakh/yekan-bakh-semi-bold.ttf");
 }
 
 :root {

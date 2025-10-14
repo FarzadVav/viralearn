@@ -19,12 +19,13 @@ function Header() {
           width={42.63}
           src={logoImg}
         />
-        <span className="font-morabba">{t("ProductName")}</span>
+        <span className="font-morabba-medium">{t("ProductName")}</span>
       </div>
 
-      <nav className="f-align gap-3 mx-auto">
+      <nav className="f-align gap-3 mx-auto font-yekan-bakh-medium">
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Home")}
@@ -32,6 +33,7 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Features")}
@@ -39,6 +41,7 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Samples")}
@@ -46,6 +49,7 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Pricing")}
@@ -53,6 +57,7 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Articles")}
@@ -60,6 +65,7 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("AboutUs")}
@@ -67,6 +73,7 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
+            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("ContactUs")}
@@ -74,7 +81,9 @@ function Header() {
         </Link>
       </nav>
 
-      <Link href={""}>
+      <Link
+        className="font-yekan-bakh-medium"
+        href={""}>
         <Button size={"lg"}>{t("CallingUs")}</Button>
       </Link>
     </header>

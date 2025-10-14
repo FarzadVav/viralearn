@@ -1,6 +1,11 @@
 {
   "App": {
-    "ProductName": "ویرالرن",
+    "ProductName": "ویــــرالــــرن",
+    "ProductTopic": "سامانه مدیریت آموزش آنلاین",
+    "ProductSlogan": "ویرا لرن، جلوه ای جدید در آموزش دیجیتال",
+    "ProductDescription": "ساده، کاربردی وهمچنان مقرون به صرفه ...",
+    "ProductOrder": "ثبت سفارش",
+    "ProductDemo": "درخواست دمو",
     "Home": "خانه",
     "Features": "امکانات",
     "Samples": "نمونه کار ها",
@@ -11,6 +16,6 @@
     "CallingUs": "تماس با ما"
   },
   "HomePage": {
-    "heroSectionName": "سامانه مدیریت آموزش آنلاین"
+    "heroSectionBadge": "ساده، کاربردی وهمچنان مقرون به صرفه ..."
   }
 }
