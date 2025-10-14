@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import "./globals.css";
 import Header from "@/components/Header";
+import { NextIntlClientProvider } from "next-intl";
 
 export const metadata: Metadata = {
   title: "ویرالرن",
@@ -36,8 +37,10 @@ export default function RootLayout({
         />
       </head>
       <body className={"antialiased"}>
-        <Header />
-        {children}
+        <NextIntlClientProvider>
+          <Header />
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );
