@@ -1,20 +1,25 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { Button } from "./ui/button";
 import logoImg from "@/public/logos/logo.png";
 
 function Header() {
+  const t = useTranslations("App");
+
   return (
     <header className="glassy-card container mt-3 rounded-2xl f-align p-6">
       <div className="f-align gap-3">
         <Image
-          alt="خانه"
+          alt={t("ProductName")}
           height={32}
           width={42.63}
           src={logoImg}
         />
-        <span className="font-morabba">خانه</span>
+        <span className="font-morabba">{t("ProductName")}</span>
       </div>
 
       <nav className="f-align gap-3 mx-auto">
@@ -22,55 +27,55 @@ function Header() {
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("Home")}
           </Button>
         </Link>
         <Link href={""}>
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("Features")}
           </Button>
         </Link>
         <Link href={""}>
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("Samples")}
           </Button>
         </Link>
         <Link href={""}>
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("Pricing")}
           </Button>
         </Link>
         <Link href={""}>
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("Articles")}
           </Button>
         </Link>
         <Link href={""}>
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("AboutUs")}
           </Button>
         </Link>
         <Link href={""}>
           <Button
             size={"lg"}
             variant={"ghost"}>
-            خانه
+            {t("ContactUs")}
           </Button>
         </Link>
       </nav>
 
       <Link href={""}>
-        <Button size={"lg"}>خانه</Button>
+        <Button size={"lg"}>{t("CallingUs")}</Button>
       </Link>
     </header>
   );

@@ -1,4 +1,15 @@
 {
+  "App": {
+    "ProductName": "ویرالرن",
+    "Home": "خانه",
+    "Features": "امکانات",
+    "Samples": "نمونه کار ها",
+    "Pricing": "تعرفه ها",
+    "Articles": "اخبار و مقالات",
+    "AboutUs": "درباره ما",
+    "ContactUs": "ارتباط با ما",
+    "CallingUs": "تماس با ما"
+  },
   "HomePage": {
     "heroSectionName": "سامانه مدیریت آموزش آنلاین"
   }
