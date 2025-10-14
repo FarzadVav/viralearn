@@ -13,6 +13,9 @@ import securityDownloadImg from "@/public/images/security-download.png";
 import securityWatermarkImg from "@/public/images/security-watermark.png";
 import securityAuthLimitImg from "@/public/images/security-auth-limit.png";
 import commentQouteImg from "@/public/images/comment-quote.png";
+import features1Img from "@/public/images/features-1.png";
+import features2Img from "@/public/images/features-2.png";
+import features3Img from "@/public/images/features-3.png";
 
 async function Page() {
   const appT = await getTranslations("App");
@@ -179,6 +182,114 @@ async function Page() {
               height={48}
               alt="Comment"
             />
+          </div>
+        </div>
+      </div>
+
+      <div className="container mt-40">
+        <div className="grid grid-cols-2">
+          <Image
+            width={640}
+            height={434}
+            alt="Features"
+            src={features1Img}
+            className="w-full h-auto"
+          />
+          <div className="flex justify-center items-start flex-col">
+            <Button
+              variant={"outline"}
+              disabled
+              size={"sm"}>
+              امکانات اکسیژن
+            </Button>
+            <h6 className="text-3xl font-morabba-bold mt-6">تعامل پر فروش</h6>
+            <p className="mt-3">
+              با به کارگیری امکانات تعاملی ویرالرن مانند انجمن گفتگو و دریافت گزارشات حرفه
+              ای؛ پشتیبانی از دانشجویان را به بهترین نحو ممکن مدیریت کنید و از طریق این
+              ارتباط موثر، فرصت‌های فروش بیشتری رقم بزنید.
+            </p>
+            <Link
+              className="mr-auto"
+              href={""}>
+              <Button variant={"link"}>
+                <span>مطالعه بیشتر</span>
+                <ChevronLeftIcon />
+              </Button>
+            </Link>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2">
+          <div className="flex justify-center items-start flex-col">
+            <Button
+              variant={"outline"}
+              disabled
+              size={"sm"}>
+              امکانات اکسیژن
+            </Button>
+            <h6 className="text-3xl font-morabba-bold mt-6">
+              طراحی و مدیریت دوره ها سریع‌تر از همیشه
+            </h6>
+            <p className="mt-3">
+              ساخت دوره هرگز به این آسانی نبوده است. با ویرا لرن، بدون نیاز به هیچگونه
+              دانش فنی، می‌توانید دوره آموزشی خود را بسازید، دروس را فصل بندی کنید،
+              آزمون‌ها و تکالیف را طراحی کرده و به بهترین روش ممکن آموزش خود را ارائه
+              دهید.
+            </p>
+            <div className="w-full f-align gap-3 mt-3 justify-end">
+              <Link href={""}>
+                <Button>دریافت دمو</Button>
+              </Link>
+              <Link href={""}>
+                <Button variant={"link"}>
+                  <span>مطالعه بیشتر</span>
+                  <ChevronLeftIcon />
+                </Button>
+              </Link>
+            </div>
+          </div>
+          <Image
+            width={640}
+            height={434}
+            alt="Features"
+            src={features2Img}
+            className="w-full h-auto"
+          />
+        </div>
+
+        <div className="grid grid-cols-2">
+          <Image
+            width={640}
+            height={434}
+            alt="Features"
+            src={features1Img}
+            className="w-full h-auto"
+          />
+          <div className="flex justify-center items-start flex-col">
+            <Button
+              variant={"outline"}
+              disabled
+              size={"sm"}>
+              امکانات اکسیژن
+            </Button>
+            <h6 className="text-3xl font-morabba-bold mt-6">طراحی مدرک با چند کلیک !</h6>
+            <p className="mt-3">
+              با قابلیت طراحی مدرک پایان دوره، به همراه لوگو و سربرگ تجاری خودتان میتوانید
+              به تدریس خود اعتبار بخشید. علاوه بر این، ویرالرن امکان گرفتن استعلام مدرک را
+              نیز برای دانشجویانتان فراهم کرده است تا بتوانند از تایید صحت آن در مراکز و
+              موسسات مرتبط استفاده کنند.
+            </p>
+            <div className="w-full f-align gap-3 mt-3 justify-end">
+              <Link href={""}>
+                <Button>دریافت دمو</Button>
+              </Link>
+              <Link href={""}>
+                <Button variant={"link"}>
+                  <span>مطالعه بیشتر</span>
+                  <ChevronLeftIcon />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

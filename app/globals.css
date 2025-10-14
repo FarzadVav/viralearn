@@ -178,7 +178,7 @@
 }
 
 @utility glassy-card {
-  @apply bg-card/10 backdrop-blur-xs;
+  @apply bg-card/10 backdrop-blur-sm;
 }
 
 @utility bordered-glassy-card {

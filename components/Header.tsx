@@ -11,7 +11,7 @@ function Header() {
   const t = useTranslations("App");
 
   return (
-    <header className="glassy-card container mt-3 rounded-2xl f-align p-6">
+    <header className="glassy-card sticky top-3 container mt-3 rounded-2xl f-align p-6 z-40">
       <div className="f-align gap-3">
         <Image
           alt={t("ProductName")}
