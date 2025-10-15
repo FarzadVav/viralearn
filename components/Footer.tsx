@@ -3,9 +3,9 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import logoImg from "@/public/logos/logo.png";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
+import logoImg from "@/public/logos/logo.png";
 
 function Footer() {
   const t = useTranslations("App");

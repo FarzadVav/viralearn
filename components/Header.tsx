@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import { Button } from "./ui/button";
 import logoImg from "@/public/logos/logo.png";
+import { Link } from "@/i18n/navigation";
 
 function Header() {
   const t = useTranslations("App");
@@ -31,7 +31,7 @@ function Header() {
             {t("Home")}
           </Button>
         </Link>
-        <Link href={""}>
+        <Link href={"/features"}>
           <Button
             className="rounded-full"
             size={"lg"}
