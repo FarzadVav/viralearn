@@ -190,3 +190,7 @@
 @utility showcase-btn {
   @apply pointer-events-none opacity-75;
 }
+
+@utility separator-border {
+  @apply border-foreground/10;
+}
