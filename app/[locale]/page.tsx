@@ -328,8 +328,8 @@ async function Page() {
         </p>
 
         <Image
-          width={640}
-          height={434}
+            width={640}
+            height={434}
           alt="Cooperation"
           className="mt-6"
           src={cooperationImg}
