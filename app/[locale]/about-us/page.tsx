@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { StarIcon } from "lucide-react";
 
-import aboutUsOurMissionImg from "@/public/images/about-us_our-mission.png";
-import aboutUsOurAbilitiesImg from "@/public/images/about-us_our-abilities.png";
 import aboutUsOurValuesImg from "@/public/images/about-us_our-values.png";
 import aboutUsOurFutureImg from "@/public/images/about-us_our-future.png";
+import aboutUsOurMissionImg from "@/public/images/about-us_our-mission.png";
+import aboutUsOurAbilitiesImg from "@/public/images/about-us_our-abilities.png";
 
 function AboutUsPage() {
   return (

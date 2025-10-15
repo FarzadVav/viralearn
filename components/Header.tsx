@@ -71,7 +71,7 @@ function Header() {
             {t("AboutUs")}
           </Button>
         </Link>
-        <Link href={""}>
+        <Link href={"/contact-us"}>
           <Button
             className="rounded-full"
             size={"lg"}
