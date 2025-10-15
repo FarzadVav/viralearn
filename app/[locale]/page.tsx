@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import {
   ArrowLeftIcon,
@@ -8,10 +8,11 @@ import {
   StarIcon,
 } from "lucide-react";
 
-import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
 import commentTextureImg from "@/public/images/comment-texture.png";
 import securityLicenceImg from "@/public/images/security-licence.png";
 import securityPatternImg from "@/public/images/security-pattern.png";
@@ -30,7 +31,6 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
 
 async function Page() {
   const appT = await getTranslations("App");
@@ -328,8 +328,8 @@ async function Page() {
         </p>
 
         <Image
-            width={640}
-            height={434}
+          width={640}
+          height={434}
           alt="Cooperation"
           className="mt-6"
           src={cooperationImg}
@@ -600,6 +600,10 @@ async function Page() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+
+        <Link className="mt-6" href={"/faq"}>
+          <Button>مشاهده همه</Button>
+        </Link>
       </div>
 
       {/* // TODO: Add wave pattern, Add icon to inputs */}

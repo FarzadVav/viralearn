@@ -23,7 +23,7 @@ function Header() {
       </div>
 
       <nav className="f-align gap-3 mx-auto font-yekan-bakh-medium">
-        <Link href={""}>
+        <Link href={"/"}>
           <Button
             className="rounded-full"
             size={"lg"}
