@@ -30,6 +30,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Input } from "@/components/ui/input";
 
 async function Page() {
   const appT = await getTranslations("App");
@@ -599,6 +600,43 @@ async function Page() {
             </AccordionContent>
           </AccordionItem>
         </Accordion>
+      </div>
+
+      {/* // TODO: Add wave pattern, Add icon to inputs */}
+      <div className="container mt-40">
+        <div className="bordered-glassy-card p-6 rounded-2xl grid grid-cols-3">
+          <div className="col-span-2 flex justify-center flex-col">
+            <h6 className="text-4xl font-morabba-bold">
+              فرصت دمو رایگان را از دست ندهید!
+            </h6>
+            <p className="mt-3">امکانات ویرالرن را متناسب با نیاز های خود بسنجید</p>
+          </div>
+
+          <div className="flex justify-center flex-col">
+            <Label
+              className="font-yekan-bakh-bold"
+              htmlFor="demo-fullname">
+              نام و نام خانوادگی
+            </Label>
+            <Input
+              className="mt-3"
+              placeholder="نام و نام خانوادگی"
+            />
+
+            <Label
+              className="font-yekan-bakh-bold mt-6"
+              htmlFor="demo-fullname">
+              شماره موبایل
+            </Label>
+            <Input
+              className="mt-3"
+              placeholder="+98 *** *** ****"
+              dir="ltr"
+            />
+
+            <Button className="w-max mr-auto mt-6">ارسال</Button>
+          </div>
+        </div>
       </div>
     </>
   );
