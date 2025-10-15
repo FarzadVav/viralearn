@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-import { ArrowLeftIcon, ChevronLeftIcon } from "lucide-react";
+import {
+  ArrowLeftIcon,
+  ChevronLeftIcon,
+  CircleCheckIcon,
+  CircleXIcon,
+  StarIcon,
+} from "lucide-react";
 
 import Image from "next/image";
 import { Label } from "@/components/ui/label";
@@ -16,13 +22,23 @@ import commentQouteImg from "@/public/images/comment-quote.png";
 import features1Img from "@/public/images/features-1.png";
 import features2Img from "@/public/images/features-2.png";
 import features3Img from "@/public/images/features-3.png";
+import cooperationImg from "@/public/images/cooperation.png";
+import howToStartImg from "@/public/images/how-to-start.png";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 async function Page() {
   const appT = await getTranslations("App");
   const homeT = await getTranslations("HomePage");
 
   return (
+    // TODO: Add blury circles
     <>
+      {/* // TODO: Discussion for hero section, Add icons, Add switch reactivity, Add glow hover effect */}
       <div className="bordered-glassy-card p-9 rounded-2xl container f-center flex-col mt-6">
         <h2 className="font-morabba-medium">{appT("ProductTopic")}</h2>
         <h1 className="font-morabba-bold text-6xl mt-9">{appT("ProductSlogan")}</h1>
@@ -82,6 +98,7 @@ async function Page() {
         <p className="leading-relaxed">{homeT("AdDescription")}</p>
       </div>
 
+      {/* // TODO: Fix image files from Figma */}
       <div className="container mt-40">
         <h4 className="font-morabba-bold text-5xl text-center">حواسمان ب زحماتتان هست</h4>
         <p className="text-center mt-6">
@@ -149,7 +166,7 @@ async function Page() {
         </div>
       </div>
 
-      <div className="mt-40 h-[75vh] f-center flex-col relative">
+      <div className="mt-40 h-[60vh] f-center flex-col relative">
         <Image
           alt="Comment"
           unoptimized
@@ -262,7 +279,7 @@ async function Page() {
             width={640}
             height={434}
             alt="Features"
-            src={features1Img}
+            src={features3Img}
             className="w-full h-auto"
           />
           <div className="flex justify-center items-start flex-col">
@@ -292,6 +309,296 @@ async function Page() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* // TODO: Add carousel */}
+      <div className="container f-center flex-col mt-40">
+        <Button
+          variant={"outline"}
+          disabled
+          size={"sm"}>
+          محصولات
+        </Button>
+
+        <h6 className="text-5xl font-morabba-bold mt-6">پروژه انگلیش کلینیک</h6>
+        <p className="text-center mt-6">
+          با ویرا لرن میتوانید با خیال راحت دوره هایتان را روی وبسایت خودتان منتشر کنید و
+          نگران نگران کپی برداری و ضبط شدن آن‌ها نباشید.
+        </p>
+
+        <Image
+          width={640}
+          height={434}
+          alt="Cooperation"
+          className="mt-6"
+          src={cooperationImg}
+        />
+      </div>
+
+      <div className="container f-center flex-col mt-40">
+        <Button
+          variant={"outline"}
+          disabled
+          size={"sm"}>
+          مراحل ساخت حساب
+        </Button>
+
+        <h6 className="text-5xl font-morabba-bold mt-6">چطور شروع کنم؟</h6>
+        <p className="text-center mt-6">
+          اولین ویژگی برجسته این نرم‌افزار، قابلیت گیمیفیکیشن است. با استفاده از این
+          ابزار، مدرسان قادرند تا محتوای آموزشی خود را با افزودن عناصر جذاب گیمیفیکیشن،
+          تبدیل به یک تجربه‌ی تعلیمی مشوق‌بخش برای دانشجویان خود کنند. این روش، به
+          دانشجویان انگیزه بیشتری برای یادگیری می‌دهد و تاثیر مثبت بسیاری بر روی نتایج
+          آموزشی دارد.
+        </p>
+
+        <Image
+          width={640}
+          height={434}
+          alt="Cooperation"
+          className="mt-6"
+          src={howToStartImg}
+        />
+      </div>
+
+      <div className="container f-center flex-col mt-40">
+        <Button
+          variant={"outline"}
+          className="showcase-btn"
+          size={"sm"}>
+          بسته ها
+        </Button>
+
+        <h6 className="text-4xl font-morabba-bold mt-6">
+          بهینه‌سازی با یک انتخاب درست شروع می‌شود
+        </h6>
+
+        <div className="mt-12 grid grid-cols-3 gap-9">
+          <div className="f-center flex-col bordered-glassy-card p-9 rounded-2xl">
+            <span className="font-yekan-bakh-bold text-primary">پایه</span>
+            <p className="font-yekan-bakh-bold text-2xl mt-1.5">
+              {(1_000_000).toLocaleString("fa")}
+            </p>
+            <Button
+              className="mt-3 showcase-btn"
+              size={"sm"}>
+              پرداخت سه ماه
+            </Button>
+            <ul className="w-full mt-6 space-y-3 text-sm">
+              <div className="f-align gap-3">
+                <CircleCheckIcon className="text-primary size-5" />
+                <p>ویژگی و امکانات این پکیج</p>
+              </div>
+              <div className="f-align gap-3">
+                <CircleXIcon className="text-destructive size-5" />
+                <p>ویژگی و امکانات این پکیج</p>
+              </div>
+            </ul>
+            <Link
+              className="mt-6"
+              href={""}>
+              <Button variant={"ghost"}>خرید</Button>
+            </Link>
+          </div>
+
+          <div className="f-center flex-col bordered-glassy-card bg-card/30 p-9 rounded-2xl scale-110">
+            <span className="font-yekan-bakh-bold text-success">به صرفه</span>
+            <p className="font-yekan-bakh-bold text-2xl mt-1.5">
+              {(6_000_000).toLocaleString("fa")}
+            </p>
+            <Button
+              className="showcase-btn mt-3"
+              size={"sm"}>
+              پرداخت دوازده ماه
+            </Button>
+            <ul className="w-full mt-6 space-y-3 text-sm">
+              <div className="f-align gap-3">
+                <CircleCheckIcon className="text-primary size-5" />
+                <p>ویژگی و امکانات این پکیج</p>
+              </div>
+              <div className="f-align gap-3">
+                <CircleXIcon className="text-destructive size-5" />
+                <p>ویژگی و امکانات این پکیج</p>
+              </div>
+            </ul>
+            <Link
+              className="mt-6"
+              href={""}>
+              <Button>خرید</Button>
+            </Link>
+          </div>
+
+          <div className="f-center flex-col bordered-glassy-card p-9 rounded-2xl">
+            <span className="font-yekan-bakh-bold text-primary">پایه</span>
+            <p className="font-yekan-bakh-bold text-2xl mt-1.5">
+              {(1_000_000).toLocaleString("fa")}
+            </p>
+            <Button
+              className="mt-3 showcase-btn"
+              size={"sm"}>
+              پرداخت سه ماه
+            </Button>
+            <ul className="w-full mt-6 space-y-3 text-sm">
+              <div className="f-align gap-3">
+                <CircleCheckIcon className="text-primary size-5" />
+                <p>ویژگی و امکانات این پکیج</p>
+              </div>
+              <div className="f-align gap-3">
+                <CircleXIcon className="text-destructive size-5" />
+                <p>ویژگی و امکانات این پکیج</p>
+              </div>
+            </ul>
+            <Link
+              className="mt-6"
+              href={""}>
+              <Button variant={"ghost"}>خرید</Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* // TODO: Add carousel */}
+      <div className="container f-center flex-col mt-40">
+        <Button
+          variant={"outline"}
+          className="showcase-btn"
+          size={"sm"}>
+          نظرات
+        </Button>
+
+        <h6 className="text-4xl font-morabba-bold mt-6">تجربه‌ی استفاده از ویرالرن</h6>
+
+        <div className="mt-16 grid grid-cols-3 gap-6">
+          <div className="bordered-glassy-card p-9 rounded-2xl">
+            <div className="f-center flex-col -translate-y-1/2">
+              <div className="size-16 rounded-full bg-card" />
+              <p className="font-yekan-bakh-bold mt-3">مدیر عامل هلیدینگ آریا</p>
+              <div className="f-align gap-1.5 mt-1.5">
+                <StarIcon className="size-5 text-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+              </div>
+            </div>
+            <p className="leading-relaxed">
+              با اکسیژن توانستیم هزینه‌های عملیاتی خود را به میزان قابل توجهی کاهش دهیم.
+              یکپارچگی اطلاعات و خودکارسازی فرآیندها باعث شده تا دقت و سرعت در بخش‌های
+              مختلف سازمان بیشتر شود. انتخاب این ERP بهترین تصمیم مدیریتی ما بود.
+            </p>
+          </div>
+          <div className="bordered-glassy-card p-9 rounded-2xl">
+            <div className="f-center flex-col -translate-y-1/2">
+              <div className="size-16 rounded-full bg-card" />
+              <p className="font-yekan-bakh-bold mt-3">مدیر عامل هلیدینگ آریا</p>
+              <div className="f-align gap-1.5 mt-1.5">
+                <StarIcon className="size-5 text-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+              </div>
+            </div>
+            <p className="leading-relaxed">
+              با اکسیژن توانستیم هزینه‌های عملیاتی خود را به میزان قابل توجهی کاهش دهیم.
+              یکپارچگی اطلاعات و خودکارسازی فرآیندها باعث شده تا دقت و سرعت در بخش‌های
+              مختلف سازمان بیشتر شود. انتخاب این ERP بهترین تصمیم مدیریتی ما بود.
+            </p>
+          </div>
+          <div className="bordered-glassy-card p-9 rounded-2xl">
+            <div className="f-center flex-col -translate-y-1/2">
+              <div className="size-16 rounded-full bg-card" />
+              <p className="font-yekan-bakh-bold mt-3">مدیر عامل هلیدینگ آریا</p>
+              <div className="f-align gap-1.5 mt-1.5">
+                <StarIcon className="size-5 text-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+                <StarIcon className="size-5 text-yellow-500 fill-yellow-500" />
+              </div>
+            </div>
+            <p className="leading-relaxed">
+              با اکسیژن توانستیم هزینه‌های عملیاتی خود را به میزان قابل توجهی کاهش دهیم.
+              یکپارچگی اطلاعات و خودکارسازی فرآیندها باعث شده تا دقت و سرعت در بخش‌های
+              مختلف سازمان بیشتر شود. انتخاب این ERP بهترین تصمیم مدیریتی ما بود.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="container f-center flex-col mt-40">
+        <Button
+          variant={"outline"}
+          className="showcase-btn"
+          size={"sm"}>
+          سوالات متداول
+        </Button>
+
+        <Accordion
+          type="single"
+          collapsible
+          className="w-full grid grid-cols-2 mt-6 gap-6"
+          defaultValue="item-1">
+          <AccordionItem
+            className="w-full"
+            value="item-1">
+            <AccordionTrigger className="w-full">
+              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
+            </AccordionTrigger>
+            <AccordionContent>
+              <p>
+                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
+                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
+                می‌شوند.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem
+            className="w-full"
+            value="item-2">
+            <AccordionTrigger className="w-full">
+              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
+            </AccordionTrigger>
+            <AccordionContent>
+              <p>
+                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
+                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
+                می‌شوند.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem
+            className="w-full"
+            value="item-3">
+            <AccordionTrigger className="w-full">
+              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
+            </AccordionTrigger>
+            <AccordionContent>
+              <p>
+                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
+                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
+                می‌شوند.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem
+            className="w-full"
+            value="item-4">
+            <AccordionTrigger className="w-full">
+              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
+            </AccordionTrigger>
+            <AccordionContent>
+              <p>
+                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
+                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
+                می‌شوند.
+              </p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
       </div>
     </>
   );

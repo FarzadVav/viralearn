@@ -56,6 +56,7 @@
   --accent: #2a99ff;
   --accent-foreground: #f2f2f3;
   --destructive: oklch(0.577 0.245 27.325);
+  --success: #12b76a;
   --border: oklch(0.929 0.013 255.508);
   --input: oklch(0.929 0.013 255.508);
   --ring: oklch(0.704 0.04 256.788);
@@ -137,6 +138,7 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
+  --color-success: var(--success);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
@@ -183,4 +185,8 @@
 
 @utility bordered-glassy-card {
   @apply glassy-card border border-card/25;
+}
+
+@utility showcase-btn {
+  @apply pointer-events-none opacity-75;
 }
