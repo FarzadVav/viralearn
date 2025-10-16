@@ -22,10 +22,9 @@ function Header() {
         <span className="font-morabba-medium">{t("ProductName")}</span>
       </div>
 
-      <nav className="f-align gap-3 mx-auto font-yekan-bakh-medium">
+      <nav className="f-align gap-3 mx-auto font-yekan-bakh-medium [&>a>button]:rounded-full">
         <Link href={"/"}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Home")}
@@ -33,7 +32,6 @@ function Header() {
         </Link>
         <Link href={"/features"}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Features")}
@@ -41,7 +39,6 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Samples")}
@@ -49,7 +46,6 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Pricing")}
@@ -57,7 +53,6 @@ function Header() {
         </Link>
         <Link href={""}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("Articles")}
@@ -65,7 +60,6 @@ function Header() {
         </Link>
         <Link href={"/about-us"}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("AboutUs")}
@@ -73,7 +67,6 @@ function Header() {
         </Link>
         <Link href={"/contact-us"}>
           <Button
-            className="rounded-full"
             size={"lg"}
             variant={"ghost"}>
             {t("ContactUs")}
