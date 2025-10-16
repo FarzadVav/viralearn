@@ -1,11 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { MailIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 
-import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import logoImg from "@/public/logos/logo.png";
+import { InputGroup, InputGroupAddon, InputGroupInput } from "./ui/input-group";
 
 function Footer() {
   const t = useTranslations("App");
@@ -94,11 +95,15 @@ function Footer() {
         <p className="col-span-2">© Design & Develop By ArvinVira Group</p>
         <div className="f-align gap-3">
           <Button>ارسال</Button>
-          <Input
-            type="email"
-            placeholder="Email"
-            dir="ltr"
-          />
+          <InputGroup dir="ltr">
+            <InputGroupAddon>
+              <MailIcon />
+            </InputGroupAddon>
+            <InputGroupInput
+              type="email"
+              placeholder="Email آدرس"
+            />
+          </InputGroup>
         </div>
       </div>
     </footer>
