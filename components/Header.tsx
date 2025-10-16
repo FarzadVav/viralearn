@@ -37,21 +37,21 @@ function Header() {
             {t("Features")}
           </Button>
         </Link>
-        <Link href={""}>
+        <Link href={"/samples"}>
           <Button
             size={"lg"}
             variant={"ghost"}>
             {t("Samples")}
           </Button>
         </Link>
-        <Link href={""}>
+        <Link href={"/pricing"}>
           <Button
             size={"lg"}
             variant={"ghost"}>
             {t("Pricing")}
           </Button>
         </Link>
-        <Link href={""}>
+        <Link href={"/articles"}>
           <Button
             size={"lg"}
             variant={"ghost"}>
