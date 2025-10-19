@@ -31,10 +31,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { getFaqs } from "@/lib/fetches/general.fetches";
 
 async function Page() {
   const appT = await getTranslations("App");
   const homeT = await getTranslations("HomePage");
+
+  const faqs = await getFaqs({ pageSize: 4 });
 
   return (
     // TODO: Add blury circles
@@ -544,65 +547,21 @@ async function Page() {
           collapsible
           className="w-full grid grid-cols-1 lg:grid-cols-2 mt-6 gap-3"
           defaultValue="item-1">
-          <AccordionItem
-            className="w-full"
-            value="item-1">
-            <AccordionTrigger className="w-full">
-              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
-            </AccordionTrigger>
-            <AccordionContent>
-              <p>
-                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
-                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
-                می‌شوند.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem
-            className="w-full"
-            value="item-2">
-            <AccordionTrigger className="w-full">
-              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
-            </AccordionTrigger>
-            <AccordionContent>
-              <p>
-                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
-                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
-                می‌شوند.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem
-            className="w-full"
-            value="item-3">
-            <AccordionTrigger className="w-full">
-              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
-            </AccordionTrigger>
-            <AccordionContent>
-              <p>
-                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
-                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
-                می‌شوند.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
-
-          <AccordionItem
-            className="w-full"
-            value="item-4">
-            <AccordionTrigger className="w-full">
-              ایا امکان شخصی سازی قالب و ظاهر سایت و اپلیکیشن وجود دارد؟
-            </AccordionTrigger>
-            <AccordionContent>
-              <p>
-                اکسیژن از آخرین تکنولوژی‌های رمزنگاری و امنیتی برای حفاظت از داده‌های شما
-                استفاده می‌کند. داده‌های شما در برابر هرگونه نفوذ و دسترسی غیرمجاز محافظت
-                می‌شوند.
-              </p>
-            </AccordionContent>
-          </AccordionItem>
+          {faqs.result?.data.map(item => (
+            <AccordionItem
+              key={item.id}
+              className="w-full"
+              value={`item-${item.id}`}>
+              <AccordionTrigger className="w-full">
+                {item.title}
+              </AccordionTrigger>
+              <AccordionContent>
+                <p>
+                  {item.description}
+                </p>
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
 
         <Link className="mt-6" href={"/faq"}>
