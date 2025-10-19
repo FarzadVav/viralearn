@@ -11,14 +11,16 @@ async function FAQPage() {
 
   return (
     <>
-      <div className="container h-96 glassy-card rounded-2xl mt-6"></div>
+      <div className="container mt-6">
+        <div className="h-96 glassy-card rounded-2xl"></div>
+      </div>
 
       <div className="container mt-40">
         {/* <h1 className="heading">خرید ویرالرن</h1> */}
         <Accordion
           type="single"
           collapsible
-          className="w-full grid grid-cols-2 gap-6"
+          className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3"
           defaultValue="item-1">
           {faqs.result?.data.map((item => (
             <AccordionItem
