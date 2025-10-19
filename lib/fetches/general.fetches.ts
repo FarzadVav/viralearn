@@ -13,3 +13,22 @@ export const getFaqs = (params: GetFaqsParamsT) =>
     headers: CommonHeaders.jsonApplicationType,
     body: JSON.stringify(params)
   })
+
+type PostContactUsT = {
+  firstName: string;
+  lastName: string;
+  email: string;
+  message: string;
+  jsonExt: string;
+  type: number;
+  responseStatus: number;
+}
+export const postContactUs = (params: PostContactUsT) =>
+  safeFetch<{ data: number }>("/contactusmessages", {
+    method: "POST",
+    headers: {
+      ...CommonHeaders.jsonApplicationType,
+      ...CommonHeaders.authBearer
+    },
+    body: JSON.stringify(params)
+  })

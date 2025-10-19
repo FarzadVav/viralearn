@@ -23,5 +23,6 @@ export async function safeFetch<T>(endPoint: string, init: RequestInit) {
 }
 
 export const CommonHeaders = {
-  jsonApplicationType: { "Content-Type": "application/json" }
+  jsonApplicationType: { "Content-Type": "application/json" },
+  authBearer: { "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}` }
 }
