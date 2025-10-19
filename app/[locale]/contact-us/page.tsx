@@ -1,38 +1,11 @@
 import { GlobeIcon, MailIcon, MapPinIcon, PhoneIcon } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import ContactUsForm from "@/components/ContactUsForm";
 
 function ContactUsPage() {
   return (
     <>
-      <div className="container glassy-card rounded-2xl mt-6 grid grid-cols-3 gap-6 p-6">
-        <div className="size-96 bg-background rounded-2xl"></div>
-        <div className="flex justify-center flex-col col-span-2">
-          <h1 className="text-5xl font-morabba-bold">نظرات شما</h1>
-          <p className="leading-relaxed mt-3">
-            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
-            طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-            لازم است
-          </p>
-          <div className="flex flex-col gap-3 mt-3">
-            <div className="w-full grid grid-cols-2 gap-3">
-              <Input placeholder="نام و نام خانوادگی" />
-              <Input
-                type="email"
-                placeholder="آدرس Email"
-                dir="ltr"
-              />
-              <Textarea
-                className="col-span-2"
-                placeholder="نوشتن نظر..."
-              />
-            </div>
-            <Button className="w-max mr-auto">ارسال نظر</Button>
-          </div>
-        </div>
-      </div>
+      <ContactUsForm />
 
       <div className="container f-center flex-col mt-40">
         <h2 className="text-5xl font-morabba-bold">

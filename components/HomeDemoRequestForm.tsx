@@ -43,7 +43,7 @@ function HomeDemoRequestForm() {
             شماره موبایل
           </Label>
           <Input
-            name="phone_number"
+            name="contact_channel"
             className="mt-3"
             placeholder="+98 *** *** ****"
             dir="ltr"
