@@ -40,73 +40,74 @@ async function Page() {
     // TODO: Add blury circles
     <>
       {/* // TODO: Discussion for hero section, Add icons, Add switch reactivity, Add glow hover effect */}
-      <div className="bordered-glassy-card p-9 rounded-2xl container f-center flex-col mt-6">
-        <h2 className="font-morabba-medium">{appT("ProductTopic")}</h2>
-        <h1 className="font-morabba-bold text-6xl mt-9">{appT("ProductSlogan")}</h1>
-        <p className="font-yekan-bakh-medium text-primary mt-12">
-          {appT("ProductDescription")}
-        </p>
-
-        <div className="f-align gap-3 mt-6">
-          <Button>{appT("ProductOrder")}</Button>
-          <Button variant={"link"}>
-            <span>{appT("ProductDemo")}</span>
-            <ChevronLeftIcon />
-          </Button>
-        </div>
-
-        <div className="w-3/4 grid grid-cols-5 gap-6 mt-16">
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-          <div className="bg-background rounded-2xl aspect-square"></div>
-        </div>
-
-        <div className="w-3/4 f-align justify-between mt-6">
-          <div className="f-align gap-3">
-            <Switch
-              dir="ltr"
-              id="without-viralearn"
-            />
-            <Label htmlFor="without-viralearn">{homeT("WithOutViralearn")}</Label>
+      <section className="container mt-6">
+        <div className="card bordered-glassy-card f-center flex-col">
+          <h2 className="sub-heading">{appT("ProductTopic")}</h2>
+          <h1 className="heading mt-9 text-center">{appT("ProductSlogan")}</h1>
+          <p className="font-yekan-bakh-bold text-primary mt-9">
+            {appT("ProductDescription")}
+          </p>
+          <div className="f-align gap-3 mt-6">
+            <Button>{appT("ProductOrder")}</Button>
+            <Button variant={"link"}>
+              <span>{appT("ProductDemo")}</span>
+              <ChevronLeftIcon />
+            </Button>
           </div>
 
-          <Link href={""}>
-            <Button variant={"link"}>
-              <span>{appT("OtherFeatures")}</span>
-              <ArrowLeftIcon />
-            </Button>
-          </Link>
-        </div>
-      </div>
+          <div className="w-full grid grid-cols-3 gap-3 mt-12 lg:grid-cols-5 lg:gap-6 lg:w-3/4">
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+            <div className="bg-background rounded-2xl aspect-square"></div>
+          </div>
 
-      <div className="container grid grid-cols-2 mt-40">
-        <div className="flex justify-center flex-col">
-          <p className="font-morabba-medium text-2xl">{homeT("AdSentence1")}</p>
-          <h3 className="font-morabba-bold text-5xl mt-3">{homeT("AdSentence2")}</h3>
+          <div className="f-align mt-6 gap-3 max-lg:flex-col lg:justify-between lg:w-3/4">
+            <div className="f-align gap-3">
+              <Switch
+                dir="ltr"
+                id="without-viralearn"
+              />
+              <Label htmlFor="without-viralearn">{homeT("WithOutViralearn")}</Label>
+            </div>
+
+            <Link href={""}>
+              <Button variant={"link"}>
+                <span>{appT("OtherFeatures")}</span>
+                <ArrowLeftIcon />
+              </Button>
+            </Link>
+          </div>
         </div>
-        <p className="leading-relaxed">{homeT("AdDescription")}</p>
+      </section>
+
+      <div className="container grid grid-cols-1 gap-6 mt-40 lg:grid-cols-2">
+        <div className="flex justify-center flex-col gap-3 max-lg:items-center">
+          <p className="sub-heading">{homeT("AdSentence1")}</p>
+          <h3 className="heading">{homeT("AdSentence2")}</h3>
+        </div>
+        <p className="max-lg:text-center leading-relaxed">{homeT("AdDescription")}</p>
       </div>
 
       {/* // TODO: Fix image files from Figma */}
       <div className="container mt-40">
-        <h4 className="font-morabba-bold text-5xl text-center">حواسمان ب زحماتتان هست</h4>
-        <p className="text-center mt-6">
+        <h4 className="text-center heading">حواسمان ب زحماتتان هست</h4>
+        <p className="text-center mt-3">
           با ویرا لرن میتوانید با خیال راحت دوره هایتان را روی وبسایت خودتان منتشر کنید و
           نگران نگران کپی برداری و ضبط شدن آن‌ها نباشید.
         </p>
-        <div className="grid grid-cols-3 gap-6 mt-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 mt-6">
           <div className="bordered-glassy-card h-72 p-3 rounded-2xl f-center flex-col">
             <Image
               unoptimized
@@ -119,7 +120,7 @@ async function Page() {
               محدودیت دسترسی برای کاربرانی که دوره را به صورت اقساطی پرداخت کردند
             </p>
           </div>
-          <div className="bordered-glassy-card relative h-72 rounded-2xl f-center flex-col p-3 col-span-2">
+          <div className="bordered-glassy-card relative h-72 rounded-2xl f-center flex-col p-3 lg:col-span-2">
             <Image
               unoptimized
               className="size-9/12 absolute opacity-50 w-auto"
@@ -138,7 +139,7 @@ async function Page() {
               دستگاه‌های دیگر
             </p>
           </div>
-          <div className="bordered-glassy-card h-72 rounded-2xl f-center flex-col p-3 col-span-2">
+          <div className="bordered-glassy-card h-72 rounded-2xl f-center flex-col p-3 lg:col-span-2">
             <Image
               unoptimized
               className="h-2/3 scale-150 w-auto"
@@ -172,40 +173,42 @@ async function Page() {
           alt="Comment"
           unoptimized
           src={commentTextureImg}
-          className="absolute w-full h-auto -z-10 opacity-75"
+          className="absolute w-full h-full lg:h-auto -z-10 opacity-75"
         />
 
-        <div className="container lg:w-3/4 bordered-glassy-card p-6 pt-20 rounded-2xl relative">
-          <div className="f-align absolute top-0 -translate-y-1/3 gap-3">
-            <div className="size-24 rounded-full bg-card" />
-            <p className="font-morabba-medium translate-y-full">
-              علی‌رضا اسلمی - مدیرعامل آروین ویرا
-            </p>
-          </div>
-          <div className="f-align gap-6">
-            <Image
-              src={commentQouteImg}
-              width={48}
-              height={48}
-              alt="Comment"
-            />
-            <p className="leading-relaxed">
-              ما معتقدیم موفقیت یک مدرس ثروتساز در گروی روشهایی است که برای انتقال دانش
-              خود به دیگران استفاده می کند. و تدوین این روش ها به ابزار مناسب احتیاج دارد.
-            </p>
-            <Image
-              className="rotate-180"
-              src={commentQouteImg}
-              width={48}
-              height={48}
-              alt="Comment"
-            />
+        <div className="container lg:w-3/4">
+          <div className="card bordered-glassy-card pt-20 relative">
+            <div className="f-align absolute top-0 -translate-y-1/3 gap-3">
+              <div className="size-16 lg:size-20 rounded-full bg-foreground" />
+              <p className="font-morabba-medium translate-y-full">
+                علی‌رضا اسلمی - مدیرعامل آروین ویرا
+              </p>
+            </div>
+            <div className="f-align gap-6">
+              <Image
+                src={commentQouteImg}
+                width={48}
+                height={48}
+                alt="Comment"
+              />
+              <p className="leading-relaxed">
+                ما معتقدیم موفقیت یک مدرس ثروتساز در گروی روشهایی است که برای انتقال دانش
+                خود به دیگران استفاده می کند. و تدوین این روش ها به ابزار مناسب احتیاج دارد.
+              </p>
+              <Image
+                className="rotate-180"
+                src={commentQouteImg}
+                width={48}
+                height={48}
+                alt="Comment"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="container mt-40">
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2">
           <Image
             width={640}
             height={434}
@@ -213,21 +216,21 @@ async function Page() {
             src={features1Img}
             className="w-full h-auto"
           />
-          <div className="flex justify-center items-start flex-col">
+          <div className="flex justify-center flex-col items-center lg:items-start">
             <Button
               variant={"outline"}
-              disabled
+              className="pointer-events-none"
               size={"sm"}>
               امکانات اکسیژن
             </Button>
-            <h6 className="text-3xl font-morabba-bold mt-6">تعامل پر فروش</h6>
-            <p className="mt-3">
+            <h6 className="sub-heading mt-3">تعامل پر فروش</h6>
+            <p className="mt-3 max-lg:text-center">
               با به کارگیری امکانات تعاملی ویرالرن مانند انجمن گفتگو و دریافت گزارشات حرفه
               ای؛ پشتیبانی از دانشجویان را به بهترین نحو ممکن مدیریت کنید و از طریق این
               ارتباط موثر، فرصت‌های فروش بیشتری رقم بزنید.
             </p>
             <Link
-              className="mr-auto"
+              className="mt-3 mr-auto"
               href={""}>
               <Button variant={"link"}>
                 <span>مطالعه بیشتر</span>
@@ -237,18 +240,18 @@ async function Page() {
           </div>
         </div>
 
-        <div className="grid grid-cols-2">
-          <div className="flex justify-center items-start flex-col">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 mt-6">
+          <div className="flex justify-center flex-col items-center lg:items-start">
             <Button
               variant={"outline"}
-              disabled
+              className="pointer-events-none"
               size={"sm"}>
               امکانات اکسیژن
             </Button>
-            <h6 className="text-3xl font-morabba-bold mt-6">
+            <h6 className="sub-heading mt-3">
               طراحی و مدیریت دوره ها سریع‌تر از همیشه
             </h6>
-            <p className="mt-3">
+            <p className="mt-3 max-lg:text-center">
               ساخت دوره هرگز به این آسانی نبوده است. با ویرا لرن، بدون نیاز به هیچگونه
               دانش فنی، می‌توانید دوره آموزشی خود را بسازید، دروس را فصل بندی کنید،
               آزمون‌ها و تکالیف را طراحی کرده و به بهترین روش ممکن آموزش خود را ارائه
@@ -271,11 +274,11 @@ async function Page() {
             height={434}
             alt="Features"
             src={features2Img}
-            className="w-full h-auto"
+            className="w-full h-auto max-lg:row-start-1"
           />
         </div>
 
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 gap-3 lg:grid-cols-2 mt-6">
           <Image
             width={640}
             height={434}
@@ -283,15 +286,15 @@ async function Page() {
             src={features3Img}
             className="w-full h-auto"
           />
-          <div className="flex justify-center items-start flex-col">
+          <div className="flex justify-center items-center flex-col lg:items-start">
             <Button
               variant={"outline"}
-              disabled
+              className="pointer-events-none"
               size={"sm"}>
               امکانات اکسیژن
             </Button>
-            <h6 className="text-3xl font-morabba-bold mt-6">طراحی مدرک با چند کلیک !</h6>
-            <p className="mt-3">
+            <h6 className="sub-heading mt-6">طراحی مدرک با چند کلیک !</h6>
+            <p className="mt-3 max-lg:text-center">
               با قابلیت طراحی مدرک پایان دوره، به همراه لوگو و سربرگ تجاری خودتان میتوانید
               به تدریس خود اعتبار بخشید. علاوه بر این، ویرالرن امکان گرفتن استعلام مدرک را
               نیز برای دانشجویانتان فراهم کرده است تا بتوانند از تایید صحت آن در مراکز و
@@ -316,13 +319,13 @@ async function Page() {
       <div className="container f-center flex-col mt-40">
         <Button
           variant={"outline"}
-          disabled
+          className="pointer-events-none"
           size={"sm"}>
           محصولات
         </Button>
 
-        <h6 className="text-5xl font-morabba-bold mt-6">پروژه انگلیش کلینیک</h6>
-        <p className="text-center mt-6">
+        <h6 className="sub-heading mt-3">پروژه انگلیش کلینیک</h6>
+        <p className="text-center mt-3">
           با ویرا لرن میتوانید با خیال راحت دوره هایتان را روی وبسایت خودتان منتشر کنید و
           نگران نگران کپی برداری و ضبط شدن آن‌ها نباشید.
         </p>
@@ -331,7 +334,7 @@ async function Page() {
           width={640}
           height={434}
           alt="Cooperation"
-          className="mt-6"
+          className="mt-3"
           src={cooperationImg}
         />
       </div>
@@ -339,13 +342,13 @@ async function Page() {
       <div className="container f-center flex-col mt-40">
         <Button
           variant={"outline"}
-          disabled
+          className="pointer-events-none"
           size={"sm"}>
           مراحل ساخت حساب
         </Button>
 
-        <h6 className="text-5xl font-morabba-bold mt-6">چطور شروع کنم؟</h6>
-        <p className="text-center mt-6">
+        <h6 className="heading mt-3">چطور شروع کنم؟</h6>
+        <p className="text-center mt-3">
           اولین ویژگی برجسته این نرم‌افزار، قابلیت گیمیفیکیشن است. با استفاده از این
           ابزار، مدرسان قادرند تا محتوای آموزشی خود را با افزودن عناصر جذاب گیمیفیکیشن،
           تبدیل به یک تجربه‌ی تعلیمی مشوق‌بخش برای دانشجویان خود کنند. این روش، به
@@ -357,7 +360,7 @@ async function Page() {
           width={640}
           height={434}
           alt="Cooperation"
-          className="mt-6"
+          className="mt-3"
           src={howToStartImg}
         />
       </div>
@@ -365,24 +368,24 @@ async function Page() {
       <div className="container f-center flex-col mt-40">
         <Button
           variant={"outline"}
-          className="showcase-btn"
+          className="pointer-events-none"
           size={"sm"}>
           بسته ها
         </Button>
-
-        <h6 className="text-4xl font-morabba-bold mt-6">
+        <h6 className="heading text-center mt-3">
           بهینه‌سازی با یک انتخاب درست شروع می‌شود
         </h6>
 
-        <div className="mt-12 grid grid-cols-3 gap-9">
-          <div className="f-center flex-col bordered-glassy-card p-9 rounded-2xl">
+        <div className="max-lg:w-full mt-6 lg:mt-12 grid grid-cols-1 lg:grid-cols-3 gap-3 lg:gap-12">
+          <div className="f-center flex-col card bordered-glassy-card">
             <span className="font-yekan-bakh-bold text-primary">پایه</span>
-            <p className="font-yekan-bakh-bold text-2xl mt-1.5">
+            <p className="title mt-1.5">
               {(1_000_000).toLocaleString("fa")}
             </p>
             <Button
-              className="mt-3 showcase-btn"
-              size={"sm"}>
+              className="mt-3 pointer-events-none"
+              size={"sm"}
+              variant={"soft"}>
               پرداخت سه ماه
             </Button>
             <ul className="w-full mt-6 space-y-3 text-sm">
@@ -402,14 +405,15 @@ async function Page() {
             </Link>
           </div>
 
-          <div className="f-center flex-col bordered-glassy-card bg-card/30 p-9 rounded-2xl scale-110">
+          <div className="f-center flex-col card bordered-glassy-card lg:bg-foreground/20 lg:border-foreground lg:scale-110">
             <span className="font-yekan-bakh-bold text-success">به صرفه</span>
-            <p className="font-yekan-bakh-bold text-2xl mt-1.5">
+            <p className="title mt-1.5">
               {(6_000_000).toLocaleString("fa")}
             </p>
             <Button
-              className="showcase-btn mt-3"
-              size={"sm"}>
+              className="mt-3 pointer-events-none"
+              size={"sm"}
+              variant={"soft"}>
               پرداخت دوازده ماه
             </Button>
             <ul className="w-full mt-6 space-y-3 text-sm">
@@ -429,14 +433,15 @@ async function Page() {
             </Link>
           </div>
 
-          <div className="f-center flex-col bordered-glassy-card p-9 rounded-2xl">
+          <div className="f-center flex-col card bordered-glassy-card">
             <span className="font-yekan-bakh-bold text-primary">پایه</span>
-            <p className="font-yekan-bakh-bold text-2xl mt-1.5">
+            <p className="title mt-1.5">
               {(1_000_000).toLocaleString("fa")}
             </p>
             <Button
-              className="mt-3 showcase-btn"
-              size={"sm"}>
+              className="mt-3 pointer-events-none"
+              size={"sm"}
+              variant={"soft"}>
               پرداخت سه ماه
             </Button>
             <ul className="w-full mt-6 space-y-3 text-sm">
@@ -462,15 +467,14 @@ async function Page() {
       <div className="container f-center flex-col mt-40">
         <Button
           variant={"outline"}
-          className="showcase-btn"
+          className="pointer-events-none"
           size={"sm"}>
           نظرات
         </Button>
+        <h6 className="heading mt-3">تجربه‌ی استفاده از ویرالرن</h6>
 
-        <h6 className="text-4xl font-morabba-bold mt-6">تجربه‌ی استفاده از ویرالرن</h6>
-
-        <div className="mt-16 grid grid-cols-3 gap-6">
-          <div className="bordered-glassy-card p-9 rounded-2xl">
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-3">
+          <div className="card bordered-glassy-card">
             <div className="f-center flex-col -translate-y-1/2">
               <div className="size-16 rounded-full bg-card" />
               <p className="font-yekan-bakh-bold mt-3">مدیر عامل هلیدینگ آریا</p>
@@ -488,7 +492,7 @@ async function Page() {
               مختلف سازمان بیشتر شود. انتخاب این ERP بهترین تصمیم مدیریتی ما بود.
             </p>
           </div>
-          <div className="bordered-glassy-card p-9 rounded-2xl">
+          <div className="card bordered-glassy-card">
             <div className="f-center flex-col -translate-y-1/2">
               <div className="size-16 rounded-full bg-card" />
               <p className="font-yekan-bakh-bold mt-3">مدیر عامل هلیدینگ آریا</p>
@@ -506,7 +510,7 @@ async function Page() {
               مختلف سازمان بیشتر شود. انتخاب این ERP بهترین تصمیم مدیریتی ما بود.
             </p>
           </div>
-          <div className="bordered-glassy-card p-9 rounded-2xl">
+          <div className="card bordered-glassy-card">
             <div className="f-center flex-col -translate-y-1/2">
               <div className="size-16 rounded-full bg-card" />
               <p className="font-yekan-bakh-bold mt-3">مدیر عامل هلیدینگ آریا</p>
@@ -530,7 +534,7 @@ async function Page() {
       <div className="container f-center flex-col mt-40">
         <Button
           variant={"outline"}
-          className="showcase-btn"
+          className="pointer-events-none"
           size={"sm"}>
           سوالات متداول
         </Button>
@@ -538,7 +542,7 @@ async function Page() {
         <Accordion
           type="single"
           collapsible
-          className="w-full grid grid-cols-2 mt-6 gap-6"
+          className="w-full grid grid-cols-1 lg:grid-cols-2 mt-6 gap-3"
           defaultValue="item-1">
           <AccordionItem
             className="w-full"
@@ -608,9 +612,9 @@ async function Page() {
 
       {/* // TODO: Add wave pattern, Add icon to inputs */}
       <div className="container mt-40">
-        <div className="bordered-glassy-card p-6 rounded-2xl grid grid-cols-3">
-          <div className="col-span-2 flex justify-center flex-col">
-            <h6 className="text-4xl font-morabba-bold">
+        <div className="card bordered-glassy-card grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="lg:col-span-2 flex justify-center flex-col max-lg:items-center">
+            <h6 className="heading">
               فرصت دمو رایگان را از دست ندهید!
             </h6>
             <p className="mt-3">امکانات ویرالرن را متناسب با نیاز های خود بسنجید</p>
