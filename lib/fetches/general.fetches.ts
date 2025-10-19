@@ -1,14 +1,15 @@
 import { CommonHeaders, safeFetch } from "../api";
+import { FaqT } from "@/types/api/general.api.types";
 
-export const getFaqs = ({ pageSize }: { pageSize: number }) => safeFetch<{ id: number; title: string; description: string }[]>("/faqs/client/searchex", {
-  method: "POST",
-  headers: {
-    ...CommonHeaders.jsonApplicationType
-  },
-  body: JSON.stringify({
-    keyword: "",
-    pageNumber: 1,
-    pageSize,
-    orderBy: [""]
+type GetFaqsParamsT = {
+  pageNumber?: number
+  pageSize?: number;
+  keyword?: string;
+  orderBy?: string[]
+}
+export const getFaqs = (params: GetFaqsParamsT) =>
+  safeFetch<FaqT[]>("/faqs/client/searchex", {
+    method: "POST",
+    headers: CommonHeaders.jsonApplicationType,
+    body: JSON.stringify(params)
   })
-})

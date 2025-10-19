@@ -10,34 +10,34 @@ import {
 
 import { Link } from "@/i18n/navigation";
 import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Switch } from "@/components/ui/switch";
-import { Input } from "@/components/ui/input";
+import { getFaqs } from "@/lib/fetches/general.fetches";
+import features1Img from "@/public/images/features-1.png";
+import features2Img from "@/public/images/features-2.png";
+import features3Img from "@/public/images/features-3.png";
+import cooperationImg from "@/public/images/cooperation.png";
+import howToStartImg from "@/public/images/how-to-start.png";
+import commentQouteImg from "@/public/images/comment-quote.png";
 import commentTextureImg from "@/public/images/comment-texture.png";
 import securityLicenceImg from "@/public/images/security-licence.png";
 import securityPatternImg from "@/public/images/security-pattern.png";
 import securityDownloadImg from "@/public/images/security-download.png";
 import securityWatermarkImg from "@/public/images/security-watermark.png";
 import securityAuthLimitImg from "@/public/images/security-auth-limit.png";
-import commentQouteImg from "@/public/images/comment-quote.png";
-import features1Img from "@/public/images/features-1.png";
-import features2Img from "@/public/images/features-2.png";
-import features3Img from "@/public/images/features-3.png";
-import cooperationImg from "@/public/images/cooperation.png";
-import howToStartImg from "@/public/images/how-to-start.png";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getFaqs } from "@/lib/fetches/general.fetches";
 
 async function Page() {
   const appT = await getTranslations("App");
   const homeT = await getTranslations("HomePage");
 
-  const faqs = await getFaqs({ pageSize: 4 });
+  const faqs = await getFaqs({ pageNumber: 1, pageSize: 4, keyword: "", orderBy: [""] });
 
   return (
     // TODO: Add blury circles

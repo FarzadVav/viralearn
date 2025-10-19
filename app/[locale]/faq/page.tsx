@@ -1,13 +1,13 @@
+import { getFaqs } from "@/lib/fetches/general.fetches";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { getFaqs } from "@/lib/fetches/general.fetches";
 
 async function FAQPage() {
-  const faqs = await getFaqs({ pageSize: 999 });
+  const faqs = await getFaqs({ pageNumber: 1, pageSize: 999, keyword: "", orderBy: [""] });
 
   return (
     <>
