@@ -6,6 +6,8 @@ import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { Link } from "@/i18n/navigation";
 import logoImg from "@/public/logos/logo.png";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
+import { MenuIcon, XIcon } from "lucide-react";
 
 function Header() {
   const t = useTranslations("App");
@@ -45,13 +47,13 @@ function Header() {
               {t("Samples")}
             </Button>
           </Link>
-          <Link href={"/pricing"}>
+          {/* <Link href={"/pricing"}>
             <Button
               size={"lg"}
               variant={"ghost"}>
               {t("Pricing")}
             </Button>
-          </Link>
+          </Link> */}
           <Link href={"/articles"}>
             <Button
               size={"lg"}
@@ -79,8 +81,64 @@ function Header() {
           <Link
             className="font-yekan-bakh-bold"
             href={""}>
-            <Button size={"lg"}>{t("CallingUs")}</Button>
+            <Button className="max-lg:bg-transparent" size={"lg"}>{t("CallingUs")}</Button>
           </Link>
+
+          <Sheet>
+            <SheetTrigger className="lg:hidden">
+              <Button variant="ghost" size={"icon"}>
+                <MenuIcon />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="p-3">
+              <Link className="block" href={"/"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("Home")}
+                </Button>
+              </Link>
+              <Link className="block" href={"/features"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("Features")}
+                </Button>
+              </Link>
+              <Link className="block" href={"/samples"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("Samples")}
+                </Button>
+              </Link>
+              <Link className="block" href={"/pricing"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("Pricing")}
+                </Button>
+              </Link>
+              <Link className="block" href={"/articles"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("Articles")}
+                </Button>
+              </Link>
+              <Link className="block" href={"/about-us"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("AboutUs")}
+                </Button>
+              </Link>
+              <Link className="block" href={"/contact-us"}>
+                <Button className="w-full" variant={"outline"}>
+                  {t("ContactUs")}
+                </Button>
+              </Link>
+
+              <SheetFooter>
+                <SheetClose asChild>
+                  <Button variant={"outline"} className="justify-between">
+                    <span>
+                      بستن
+                    </span>
+                    <XIcon />
+                  </Button>
+                </SheetClose>
+              </SheetFooter>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </header>

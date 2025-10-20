@@ -369,7 +369,7 @@ async function Page() {
         />
       </div>
 
-      <div className="container f-center flex-col mt-40">
+      {/* <div className="container f-center flex-col mt-40">
         <Button
           variant={"outline"}
           className="pointer-events-none"
@@ -465,7 +465,7 @@ async function Page() {
             </Link>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* // TODO: Add carousel */}
       <div className="container f-center flex-col mt-40">
