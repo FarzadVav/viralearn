@@ -6,12 +6,14 @@ import { Clock2Icon, WalletIcon } from "lucide-react";
 function CooperationPage() {
   return (
     <>
-      <div className="container h-96 glassy-card rounded-2xl mt-6"></div>
+      <div className="container mt-6">
+        <div className="h-96 glassy-card rounded-2xl"></div>
+      </div>
 
-      <div className="container grid grid-cols-2 gap-6 mt-40">
+      <div className="container grid grid-cols-1 lg:grid-cols-2 gap-6 mt-40">
         <div>
-          <h1 className="text-5xl font-morabba-bold">برنامه نویس</h1>
-          <p className="mt-3 leading-relaxed">
+          <h1 className="heading max-lg:text-center">برنامه نویس</h1>
+          <p className="mt-3 leading-relaxed max-lg:text-center">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
             طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
             لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود
@@ -26,8 +28,8 @@ function CooperationPage() {
         </div>
 
         <div>
-          <div className="bordered-glassy-card p-6 rounded-2xl">
-            <span className="font-morabba-medium text-xl">برنامه نویسی وب</span>
+          <div className="card bordered-glassy-card">
+            <span className="title">برنامه نویسی وب</span>
             <p className="mt-3">
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از
               طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
