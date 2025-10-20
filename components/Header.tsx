@@ -2,15 +2,27 @@
 
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-
-import { Button } from "./ui/button";
-import { Link } from "@/i18n/navigation";
-import logoImg from "@/public/logos/logo.png";
-import { Sheet, SheetClose, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 import { MenuIcon, XIcon } from "lucide-react";
 
+import { Button } from "./ui/button";
+import logoImg from "@/public/logos/logo.png";
+import { Link, usePathname } from "@/i18n/navigation";
+import { Sheet, SheetClose, SheetContent, SheetFooter, SheetTrigger } from "./ui/sheet";
+
+
 function Header() {
+  const pathname = usePathname();
   const t = useTranslations("App");
+
+  const LINKS = [
+    { name: t("Home"), href: "/" },
+    { name: t("Features"), href: "/features" },
+    { name: t("Samples"), href: "/samples" },
+    // { name: t("Pricing"), href: "/pricing" },
+    { name: t("Articles"), href: "/articles" },
+    { name: t("AboutUs"), href: "/about-us" },
+    { name: t("ContactUs"), href: "/contact-us" },
+  ]
 
   return (
     <header className="container mt-3 sticky top-3 z-40">
@@ -26,55 +38,15 @@ function Header() {
         </div>
 
         <nav className="f-align gap-3 mx-auto font-yekan-bakh-bold [&>a>button]:rounded-full max-lg:hidden">
-          <Link href={"/"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("Home")}
-            </Button>
-          </Link>
-          <Link href={"/features"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("Features")}
-            </Button>
-          </Link>
-          <Link href={"/samples"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("Samples")}
-            </Button>
-          </Link>
-          {/* <Link href={"/pricing"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("Pricing")}
-            </Button>
-          </Link> */}
-          <Link href={"/articles"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("Articles")}
-            </Button>
-          </Link>
-          <Link href={"/about-us"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("AboutUs")}
-            </Button>
-          </Link>
-          <Link href={"/contact-us"}>
-            <Button
-              size={"lg"}
-              variant={"ghost"}>
-              {t("ContactUs")}
-            </Button>
-          </Link>
+          {LINKS.map((item) => (
+            <Link href={item.href} key={item.name}>
+              <Button
+                size={"lg"}
+                variant={pathname.endsWith(item.href) ? "default" : "ghost"}>
+                {item.name}
+              </Button>
+            </Link>
+          ))}
         </nav>
 
         <div className="f-align gap-3 max-lg:mr-auto">
@@ -91,41 +63,15 @@ function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent className="p-3">
-              <Link className="block" href={"/"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("Home")}
-                </Button>
-              </Link>
-              <Link className="block" href={"/features"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("Features")}
-                </Button>
-              </Link>
-              <Link className="block" href={"/samples"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("Samples")}
-                </Button>
-              </Link>
-              <Link className="block" href={"/pricing"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("Pricing")}
-                </Button>
-              </Link>
-              <Link className="block" href={"/articles"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("Articles")}
-                </Button>
-              </Link>
-              <Link className="block" href={"/about-us"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("AboutUs")}
-                </Button>
-              </Link>
-              <Link className="block" href={"/contact-us"}>
-                <Button className="w-full" variant={"outline"}>
-                  {t("ContactUs")}
-                </Button>
-              </Link>
+              {LINKS.map((item) => (
+                <Link className="block" href={item.href} key={item.name}>
+                  <Button
+                    className="w-full"
+                    variant={pathname.endsWith(item.href) ? "default" : "outline"}>
+                    {item.name}
+                  </Button>
+                </Link>
+              ))}
 
               <SheetFooter>
                 <SheetClose asChild>
