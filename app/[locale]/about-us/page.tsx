@@ -9,12 +9,14 @@ import aboutUsOurAbilitiesImg from "@/public/images/about-us_our-abilities.png";
 function AboutUsPage() {
   return (
     <>
-      <div className="container h-96 glassy-card rounded-2xl mt-6"></div>
+      <div className="container mt-6">
+        <div className="h-96 glassy-card rounded-2xl"></div>
+      </div>
 
-      <div className="container mt-40 grid grid-cols-3 gap-12">
-        <div className="flex justify-center flex-col col-span-2">
-          <h1 className="text-5xl font-morabba-bold">داستان ما</h1>
-          <p className="mt-3 w-4/5">
+      <div className="container mt-40 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="flex justify-center flex-col lg:col-span-2 max-lg:items-center">
+          <h1 className="heading">داستان ما</h1>
+          <p className="mt-3 max-lg:text-center lg:w-4/5">
             هر داستان موفقی از یک چالش آغاز می‌شود. در میان دغدغه‌های روزمره‌ی مدیریت
             کلاس‌ها، پیگیری پیشرفت دانش‌آموزان و هماهنگی ابزارهای مختلف آموزشی، مدرسان با
             مشکلات فراوانی روبرو شدند. ما تصمیم گرفتیم تا با خلق یک سامانه جامع، این
@@ -24,26 +26,26 @@ function AboutUsPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-3 font-yekan-bakh-bold">
-          <div className="aspect-square bordered-glassy-card p-6 rounded-2xl f-center flex-col">
+          <div className="aspect-square card bordered-glassy-card f-center flex-col">
             <span className="text-3xl text-primary">+۲۰،۰۰۰</span>
             <span className="mt-3">دانش پذیر</span>
           </div>
-          <div className="aspect-square bordered-glassy-card p-6 rounded-2xl f-center flex-col">
+          <div className="aspect-square card bordered-glassy-card f-center flex-col">
             <span className="text-3xl text-primary">۵۰٪</span>
             <span className="mt-3">فروش بیشتر</span>
           </div>
-          <div className="aspect-square bordered-glassy-card p-6 rounded-2xl f-center flex-col">
+          <div className="aspect-square card bordered-glassy-card f-center flex-col">
             <span className="text-3xl text-primary">+۲۰،۰۰۰</span>
             <span className="mt-3">دانش پذیر</span>
           </div>
-          <div className="aspect-square bordered-glassy-card p-6 rounded-2xl f-center flex-col">
+          <div className="aspect-square card bordered-glassy-card f-center flex-col">
             <span className="text-3xl text-primary">۳۰۰</span>
             <span className="mt-3">مدرس</span>
           </div>
         </div>
       </div>
 
-      <div className="container mt-40 grid grid-cols-2 gap-12">
+      <div className="container mt-40 grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Image
           width={616}
           height={393}
@@ -51,9 +53,9 @@ function AboutUsPage() {
           src={aboutUsOurMissionImg}
           className="rounded-2xl w-full h-auto"
         />
-        <div className="flex justify-center flex-col">
-          <h2 className="text-5xl font-morabba-bold">ماموریت ما</h2>
-          <p className="mt-3 leading-relaxed">
+        <div className="flex justify-center flex-col max-lg:items-center">
+          <h2 className="heading">ماموریت ما</h2>
+          <p className="mt-3 leading-relaxed max-lg:text-center">
             ما در ویرالرن بر این باوریم که:
             {'"'}ما معتقدیم تدریس تدریس به عنوان یک امر مقدس، باید بهینه و کارآمد باشد و
             این امر مستلزم استفاده از ابزارهای هوشمند است. این اعتقاد، ما را به خلق
@@ -66,10 +68,10 @@ function AboutUsPage() {
         </div>
       </div>
 
-      <div className="container mt-40 grid grid-cols-2 gap-12">
-        <div className="flex justify-center flex-col">
-          <h2 className="text-5xl font-morabba-bold">ویژگی‌های منحصربه‌فرد ما</h2>
-          <p className="mt-3 leading-relaxed">
+      <div className="container mt-40 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="flex justify-center flex-col max-lg:items-center">
+          <h2 className="heading">ویژگی‌های منحصربه‌فرد ما</h2>
+          <p className="mt-3 leading-relaxed max-lg:text-center">
             یکپارچگی کامل: تمامی ابزارهای مورد نیاز برای مدیریت آموزشی در یک بستر جمع‌آوری
             شده‌اند.
             <br />
@@ -87,13 +89,13 @@ function AboutUsPage() {
           height={393}
           alt="Our mission"
           src={aboutUsOurAbilitiesImg}
-          className="rounded-2xl w-full h-auto"
+          className="rounded-2xl w-full h-auto max-lg:row-start-1"
         />
       </div>
 
       <div className="container mt-40">
-        <h2 className="text-5xl font-morabba-bold">چهارچوب ارزش‌های ویرالرن</h2>
-        <div className="mt-6 grid grid-cols-2 gap-12">
+        <h2 className="heading max-lg:text-center">چهارچوب ارزش‌های ویرالرن</h2>
+        <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
           <Image
             width={616}
             height={393}
@@ -101,11 +103,11 @@ function AboutUsPage() {
             src={aboutUsOurValuesImg}
             className="rounded-2xl w-full h-auto"
           />
-          <div className="flex justify-center flex-col gap-3">
-            <div className="bordered-glassy-card p-6 rounded-2xl">
+          <div className="flex justify-center flex-col gap-3 max-lg:items-center">
+            <div className="card bordered-glassy-card">
               <div className="f-align gap-3">
                 <StarIcon className="text-primary fill-primary size-7" />
-                <p className="font-yekan-bakh-bold">یکپارچگی در خدمات</p>
+                <p className="title">یکپارچگی در خدمات</p>
               </div>
               <p className="mt-3 leading-relaxed">
                 ویرالرن متعهد است تمام ابزارهای مورد نیاز مدرسان و دانش پذیران را در یک
@@ -114,10 +116,10 @@ function AboutUsPage() {
               </p>
             </div>
 
-            <div className="bordered-glassy-card p-6 rounded-2xl">
+            <div className="card bordered-glassy-card">
               <div className="f-align gap-3">
                 <StarIcon className="text-primary fill-primary size-7" />
-                <p className="font-yekan-bakh-bold">تمرکز بر رشد و برندینگ مدرسان</p>
+                <p className="title">تمرکز بر رشد و برندینگ مدرسان</p>
               </div>
               <p className="mt-3 leading-relaxed">
                 ویرالرن به‌عنوان یک ERP آموزشی، به مدرسان کمک می‌کند تا علاوه بر تدریس،
@@ -127,10 +129,10 @@ function AboutUsPage() {
               </p>
             </div>
 
-            <div className="bordered-glassy-card p-6 rounded-2xl">
+            <div className="card bordered-glassy-card">
               <div className="f-align gap-3">
                 <StarIcon className="text-primary fill-primary size-7" />
-                <p className="font-yekan-bakh-bold">نوآوری مستمر</p>
+                <p className="title">نوآوری مستمر</p>
               </div>
               <p className="mt-3 leading-relaxed">
                 ویرالرن همواره در حال طراحی و توسعه ابزارهای نوآورانه برای پاسخ به
@@ -138,10 +140,10 @@ function AboutUsPage() {
               </p>
             </div>
 
-            <div className="bordered-glassy-card p-6 rounded-2xl">
+            <div className="card bordered-glassy-card">
               <div className="f-align gap-3">
                 <StarIcon className="text-primary fill-primary size-7" />
-                <p className="font-yekan-bakh-bold"> ساده‌سازی فرایندهای مدیریتی</p>
+                <p className="title"> ساده‌سازی فرایندهای مدیریتی</p>
               </div>
               <p className="mt-3 leading-relaxed">
                 ویرالرن متعهد است که مدیریت دوره‌ها، تعاملات، فروش و بازاریابی را برای
@@ -152,10 +154,10 @@ function AboutUsPage() {
         </div>
       </div>
 
-      <div className="container mt-40 grid grid-cols-2 gap-12">
-        <div className="flex justify-center flex-col">
-          <h2 className="text-5xl font-morabba-bold">چشم‌انداز آینده</h2>
-          <p className="mt-3 leading-relaxed">
+      <div className="container mt-40 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="flex justify-center flex-col max-lg:items-center">
+          <h2 className="heading">چشم‌انداز آینده</h2>
+          <p className="mt-3 leading-relaxed max-lg:text-center">
             در ویرالرن همواره در جستجوی نوآوری و بهبود مستمر هستیم. چشم‌انداز ما، ایجاد
             تجربه‌ای آموزشی است که نه تنها برای مدرسان و دانش‌پذیران بلکه موسسات و آکادمی
             ها نیز مؤثر باشد. ما متعهدیم تا با به‌روزرسانی‌های مداوم و افزودن امکانات
@@ -172,13 +174,13 @@ function AboutUsPage() {
       </div>
 
       <div className="container mt-40">
-        <h6 className="text-5xl font-morabba-bold text-center">تیم ما</h6>
-        <p className="max-w-5xl mt-3 text-center mx-auto">
+        <h6 className="heading text-center">تیم ما</h6>
+        <p className="lg:max-w-5xl mt-3 text-center mx-auto">
           در این بخش پربازدیدترین و مفیدترین مطالب درباره ERP و مدیریت سازمانی را مشاهده
           کنید. این مقالات توسط کاربران مورد توجه قرار گرفته و برای بهبود عملکرد کسب‌وکار
           شما توصیه می‌شوند.
         </p>
-        <div className="grid grid-cols-5 gap-3 mt-3">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 mt-6">
           <div className="f-center flex-col gap-3">
             <div className="w-full aspect-square glassy-card rounded-2xl"></div>
             <span className="font-yekan-bakh-bold">فرزاد وحدتی نژاد</span>
