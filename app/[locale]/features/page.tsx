@@ -2,8 +2,11 @@ import { ChevronLeftIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
+import { getFeatures } from "@/lib/fetches/features.fetches";
 
-function FeaturesPage() {
+async function FeaturesPage() {
+  const features = await getFeatures();
+
   return (
     // TODO: Add icon, title and description for cards
     <>
@@ -23,126 +26,11 @@ function FeaturesPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-        </div>
-      </div>
-
-      <div className="container mt-40">
-        <div className="f-align lg:justify-between gap-3 max-lg:flex-col">
-          <h1 className="heading">مدیریت وبینار</h1>
-          <Link href={""}>
-            <Button variant={"soft"}>
-              <span>جزئیات بیشتر</span>
-              <ChevronLeftIcon />
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-        </div>
-      </div>
-
-      <div className="container mt-40">
-        <div className="f-align lg:justify-between gap-3 max-lg:flex-col">
-          <h1 className="heading">مدیریت ارتباط با مشتریان</h1>
-          <Link href={""}>
-            <Button variant={"soft"}>
-              <span>جزئیات بیشتر</span>
-              <ChevronLeftIcon />
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-        </div>
-      </div>
-
-      <div className="container mt-40">
-        <div className="f-align lg:justify-between gap-3 max-lg:flex-col">
-          <h1 className="heading">فروشگاه</h1>
-          <Link href={""}>
-            <Button variant={"soft"}>
-              <span>جزئیات بیشتر</span>
-              <ChevronLeftIcon />
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-        </div>
-      </div>
-
-      <div className="container mt-40">
-        <div className="f-align lg:justify-between gap-3 max-lg:flex-col">
-          <h1 className="heading">امنیت</h1>
-          <Link href={""}>
-            <Button variant={"soft"}>
-              <span>جزئیات بیشتر</span>
-              <ChevronLeftIcon />
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-        </div>
-      </div>
-
-      <div className="container mt-40">
-        <div className="f-align lg:justify-between gap-3 max-lg:flex-col">
-          <h1 className="heading">مدیریت مالی</h1>
-          <Link href={""}>
-            <Button variant={"soft"}>
-              <span>جزئیات بیشتر</span>
-              <ChevronLeftIcon />
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-        </div>
-      </div>
-
-      <div className="container mt-40">
-        <div className="f-align lg:justify-between gap-3 max-lg:flex-col">
-          <h1 className="heading">وبسایت و اپلیکیشن اختصاصی</h1>
-          <Link href={""}>
-            <Button variant={"soft"}>
-              <span>جزئیات بیشتر</span>
-              <ChevronLeftIcon />
-            </Button>
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 mt-6 gap-3">
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
-          <div className="bordered-glassy-card p-6 rounded-2xl"></div>
+          {features.result?.data.map((item) => (
+            <div key={item.id} className="card bordered-glassy-card">
+              {item.name}
+            </div>
+          ))}
         </div>
       </div>
 

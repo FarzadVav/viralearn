@@ -1,5 +1,13 @@
 import { CommonHeaders, safeFetch } from "../api";
-import { FaqT } from "@/types/api/general.api.types";
+import { CategoryT, FaqT } from "@/types/api/general.api.types";
+
+type GetCategoryParamsT = {
+  type: number;
+}
+export const getCategory = (params: GetCategoryParamsT) =>
+  safeFetch<CategoryT[]>(`/categories/client/by-type/${params.type}`, {
+    headers: CommonHeaders.authBearer
+  })
 
 type GetFaqsParamsT = {
   pageNumber?: number
