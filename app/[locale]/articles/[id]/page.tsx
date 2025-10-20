@@ -20,10 +20,10 @@ import {
 const ArticleDetailPage = () => {
   return (
     <>
-      <div className="container grid grid-cols-3 gap-6 mt-6">
-        <div className="col-span-2">
-          <div className="bordered-glassy-card p-6 rounded-2xl">
-            <h1 className="text-5xl font-morabba-bold">
+      <div className="container grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
+        <div className="lg:col-span-2">
+          <div className="card bordered-glassy-card">
+            <h1 className="heading">
               چگونه یک دوره مجازی برگزار کنیم؟
             </h1>
             <div className="f-align gap-3 mt-6">
@@ -57,7 +57,7 @@ const ArticleDetailPage = () => {
             استفاده قرار گیرد.
           </div>
         </div>
-        <div className="bordered-glassy-card p-6 rounded-2xl h-max sticky top-29 max-h-[calc(100vh-8.75rem)] overflow-y-auto">
+        <div className="card bordered-glassy-card lg:h-max lg:sticky lg:top-29 lg:max-h-[calc(100vh-8.75rem)] lg:overflow-y-auto max-lg:row-start-1">
           <div className="f-align gap-3">
             <Input
               className="flex-1"
@@ -156,16 +156,16 @@ const ArticleDetailPage = () => {
         </div>
       </div>
 
-      <div className="container grid grid-cols-3 gap-6 mt-40">
-        <div className="col-span-2">
-          <h1 className="text-5xl font-morabba-bold">محبوب ترین مقالات</h1>
-          <p className="m-6">
+      <div className="container grid grid-cols-1 lg:grid-cols-3 gap-6 mt-40">
+        <div className="lg:col-span-2">
+          <h1 className="heading max-lg:text-center">محبوب ترین مقالات</h1>
+          <p className="m-6 max-lg:text-center">
             در این بخش پربازدیدترین و مفیدترین مطالب درباره ERP و مدیریت سازمانی را مشاهده
             کنید. این مقالات توسط کاربران مورد توجه قرار گرفته و برای بهبود عملکرد
             کسب‌وکار شما توصیه می‌شوند.
           </p>
 
-          <div className="bordered-glassy-card p-6 rounded-2xl mt-6">
+          <div className="card bordered-glassy-card mt-6">
             <div className="f-align gap-3">
               <div className="size-12 rounded-full bg-background"></div>
               <div>
@@ -201,7 +201,7 @@ const ArticleDetailPage = () => {
           {Array.from({ length: 9 }).map((_, i) => (
             <div
               key={i}
-              className="bordered-glassy-card p-6 rounded-2xl mt-6">
+              className="card bordered-glassy-card mt-6">
               <div className="f-align gap-3">
                 <div className="size-12 rounded-full bg-background"></div>
                 <div>
@@ -224,7 +224,7 @@ const ArticleDetailPage = () => {
           ))}
         </div>
 
-        <div className="bordered-glassy-card p-6 rounded-2xl h-max sticky top-29 max-h-[calc(100vh-8.75rem)] overflow-y-auto space-y-3">
+        <div className="card bordered-glassy-card lg:h-max lg:sticky lg:top-29 lg:max-h-[calc(100vh-8.75rem)] lg:overflow-y-auto space-y-3">
           <p className="font-morabba-medium text-xl">ثبت نظر</p>
           <InputGroup>
             <InputGroupInput
@@ -260,21 +260,21 @@ const ArticleDetailPage = () => {
       </div>
 
       <div className="container mt-40">
-        <h3 className="text-5xl font-morabba-bold">محبوب ترین مقالات</h3>
-        <p className="m-3">
+        <h3 className="heading max-lg:text-center">محبوب ترین مقالات</h3>
+        <p className="m-3 max-lg:text-center">
           در این بخش پربازدیدترین و مفیدترین مطالب درباره ERP و مدیریت سازمانی را مشاهده
           کنید. این مقالات توسط کاربران مورد توجه قرار گرفته و برای بهبود عملکرد کسب‌وکار
           شما توصیه می‌شوند.
         </p>
-        <div className="grid mt-6 grid-cols-3 gap-6">
+        <div className="grid mt-6 grid-cols-1 lg:grid-cols-3 gap-6">
           {Array.from({ length: 3 }).map((_, i) => (
             <div
               key={i}
-              className="bordered-glassy-card p-3 rounded-2xl space-y-3">
+              className="card bordered-glassy-card space-y-3">
               <div className="w-full aspect-video bg-background rounded-2xl" />
               <Link
                 href={`/articles/${i}`}
-                className="font-yekan-bakh-bold line-clamp-2 hover:underline">
+                className="title line-clamp-2 hover:underline">
                 ۲۰ راه حل ساده برای کاهش هزینه های سازمان
               </Link>
               <p className="leading-relaxed line-clamp-3">
