@@ -12,6 +12,14 @@
     Breakpoints:
       & < lg(1024px): mobile, tablet
       & > lg(1024px): laptop, desktop, tv
+
+    Colors shades:
+      lvl1: 10%
+      lvl2: 20%
+      lvl3: 50%
+      lvl4: 80%
+      lvl5: 90%
+      lvl6: 100%
 */
 
 @import "tailwindcss";
@@ -60,9 +68,7 @@
 
   --background: oklch(12.91% 0.004 285.49);
   --foreground: oklch(97.22% 0.002 264.56);
-
   --primary: oklch(67.43% 0.168 253.22);
-  --primary-foreground: oklch(97.22% 0.002 264.56);
 }
 
 @theme {
@@ -81,9 +87,7 @@
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-
   --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
 }
 
 @layer base {

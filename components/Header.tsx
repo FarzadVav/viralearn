@@ -81,11 +81,11 @@ function Header() {
           <Link
             className="font-yekan-bakh-bold"
             href={""}>
-            <Button className="max-lg:bg-transparent" size={"lg"}>{t("CallingUs")}</Button>
+            <Button className="max-lg:bg-transparent max-lg:hover:bg-foreground/10" size={"lg"}>{t("CallingUs")}</Button>
           </Link>
 
           <Sheet>
-            <SheetTrigger className="lg:hidden">
+            <SheetTrigger className="lg:hidden" asChild>
               <Button variant="ghost" size={"icon"}>
                 <MenuIcon />
               </Button>

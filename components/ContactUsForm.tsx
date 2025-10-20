@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "sonner";
+
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
@@ -13,9 +15,9 @@ function ContactUsForm() {
         const res = await postContactUsAction(fd);
 
         if (res?.data) {
-          alert("درخواست ارسال شد")
+          toast.success("درخواست ارسال شد")
         } else {
-          alert("خطای ناشناس سمت سرور")
+          toast.error("خطای ناشناس سمت سرور")
         }
       }}
     >

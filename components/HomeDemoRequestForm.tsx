@@ -1,5 +1,7 @@
 "use client";
 
+import { toast } from "sonner";
+
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
@@ -12,9 +14,9 @@ function HomeDemoRequestForm() {
       const res = await postContactUsAction(fd);
 
       if (res?.data) {
-        alert("درخواست ارسال شد")
+        toast.success("درخواست ارسال شد")
       } else {
-        alert("خطای ناشناس سمت سرور")
+        toast.error("خطای ناشناس سمت سرور")
       }
     }}>
       <div className="card bordered-glassy-card grid grid-cols-1 gap-6 lg:grid-cols-3">
