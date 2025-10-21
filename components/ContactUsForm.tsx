@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
-import { postContactUsAction } from "@/lib/actions/general.actions";
+import { contactUsAction } from "@/lib/actions/general.actions";
 
 function ContactUsForm() {
   return (
@@ -13,7 +13,7 @@ function ContactUsForm() {
       <form
         className="card glassy-card grid grid-cols-1 lg:grid-cols-3 gap-6"
         action={async fd => {
-          const res = await postContactUsAction(fd);
+          const res = await contactUsAction(fd);
 
           if (res?.data) {
             toast.success("درخواست ارسال شد")

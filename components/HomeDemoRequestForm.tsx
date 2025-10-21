@@ -5,13 +5,13 @@ import { toast } from "sonner";
 import { Input } from "./ui/input";
 import { Label } from "./ui/label";
 import { Button } from "./ui/button";
-import { postContactUsAction } from "@/lib/actions/general.actions";
+import { contactUsAction } from "@/lib/actions/general.actions";
 
 function HomeDemoRequestForm() {
   // TODO: Add wave pattern, Add icon to inputs
   return (
     <form className="container mt-40" action={async fd => {
-      const res = await postContactUsAction(fd);
+      const res = await contactUsAction(fd);
 
       if (res?.data) {
         toast.success("درخواست ارسال شد")
@@ -45,10 +45,10 @@ function HomeDemoRequestForm() {
             شماره موبایل
           </Label>
           <Input
-            name="contact_channel"
-            className="mt-3"
-            placeholder="+98 *** *** ****"
             dir="ltr"
+            className="mt-3"
+            name="contact_channel"
+            placeholder="+98 *** *** ****"
           />
 
           <Button className="w-max mr-auto mt-6">ارسال</Button>
