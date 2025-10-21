@@ -1,12 +1,12 @@
 import { SearchIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
-import { PageProps } from "@/types/app.type"
+import { NextPageProps } from "@/types/app.types"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { getArticleCategories, getArticles } from "@/lib/fetches/articlees.fetches";
 
-async function ArticlesPage({ searchParams }: PageProps) {
+async function ArticlesPage({ searchParams }: NextPageProps) {
   const sp = await searchParams;
 
   const search = sp.search;

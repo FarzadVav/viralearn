@@ -8,6 +8,7 @@ export async function safeFetch<T>(endPoint: string, init: RequestInit) {
       headers: {
         "Tenant": process.env.NEXT_PUBLIC_API_TENANT || "",
         "Accept-Language": "fa",
+        "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
         ...init.headers
       }
     });
@@ -24,5 +25,4 @@ export async function safeFetch<T>(endPoint: string, init: RequestInit) {
 
 export const CommonHeaders = {
   jsonApplicationType: { "Content-Type": "application/json" },
-  authBearer: { "Authorization": `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}` }
 }

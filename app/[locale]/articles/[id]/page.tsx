@@ -1,4 +1,5 @@
 import { Link } from "@/i18n/navigation";
+import { notFound } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -16,15 +17,27 @@ import {
   InputGroupInput,
   InputGroupTextarea,
 } from "@/components/ui/input-group";
+import { NextPageProps } from "@/types/app.types";
+import { getArticleComments, getArticleDetail } from "@/lib/fetches/articlees.fetches";
 
-const ArticleDetailPage = () => {
+async function ArticleDetailPage({ params }: NextPageProps) {
+  const id = (await params).id;
+
+  const article = await getArticleDetail({ id: +id });
+
+  if (!article.result?.data) {
+    return notFound();
+  }
+
+  const comments = await getArticleComments({ blogId: +id });
+
   return (
     <>
       <div className="container grid grid-cols-1 lg:grid-cols-3 gap-6 mt-6">
         <div className="lg:col-span-2">
           <div className="card bordered-glassy-card">
             <h1 className="heading">
-              چگونه یک دوره مجازی برگزار کنیم؟
+              {article.result.data.title}
             </h1>
             <div className="f-align gap-3 mt-6">
               <div className="size-10 rounded-full bg-background"></div>
@@ -165,7 +178,7 @@ const ArticleDetailPage = () => {
             کسب‌وکار شما توصیه می‌شوند.
           </p>
 
-          <div className="card bordered-glassy-card mt-6">
+          {/* <div className="card bordered-glassy-card mt-6">
             <div className="f-align gap-3">
               <div className="size-12 rounded-full bg-background"></div>
               <div>
@@ -196,18 +209,18 @@ const ArticleDetailPage = () => {
               </div>
               <p className="leading-relaxed mt-3">ممنون از نظر شما</p>
             </div>
-          </div>
+          </div> */}
 
-          {Array.from({ length: 9 }).map((_, i) => (
+          {comments.result?.data.map((item) => (
             <div
-              key={i}
+              key={item.id}
               className="card bordered-glassy-card mt-6">
               <div className="f-align gap-3">
                 <div className="size-12 rounded-full bg-background"></div>
                 <div>
-                  <p className="font-yekan-bakh-bold">فرزاد وحدتی نژاد</p>
+                  <p className="font-yekan-bakh-bold">{item.userFullName}</p>
                   <p className="text-sm opacity-50">
-                    {new Date().toLocaleDateString("fa")}
+                    {new Date(item.createdOn).toLocaleDateString("fa")}
                   </p>
                 </div>
 
@@ -219,7 +232,24 @@ const ArticleDetailPage = () => {
                   <StarIcon className="size-4 text-yellow-500 fill-yellow-500" />
                 </div>
               </div>
-              <p className="leading-relaxed mt-3">بسیار عالی و مفید</p>
+              <p className="leading-relaxed mt-3">{item.text}</p>
+
+              {item.children.length ? (
+                item.children.map(itemChild => (
+                  <div key={itemChild.id} className="pr-6 mr-6 mt-6 border-r-2 separator-border">
+                    <div className="f-align gap-3">
+                      <div className="size-12 rounded-full bg-background"></div>
+                      <div>
+                        <p className="font-yekan-bakh-bold">{itemChild.userFullName}</p>
+                        <p className="text-sm opacity-50">
+                          {new Date(itemChild.createdOn).toLocaleDateString("fa")}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="leading-relaxed mt-3">{itemChild.text}</p>
+                  </div>
+                ))
+              ) : null}
             </div>
           ))}
         </div>
