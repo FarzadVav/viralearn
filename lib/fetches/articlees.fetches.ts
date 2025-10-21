@@ -14,7 +14,8 @@ type GetArticleCategoriesParamsT = {
   orderBy: string[];
 }
 export const getArticles = (params: GetArticleCategoriesParamsT) =>
-  safeFetch<ArticleT[]>("/blogposts/client/searchsp", {
+  safeFetch<{ data: ArticleT[] }>("/blogposts/client/searchsp", {
+    method: "POST",
     headers: {
       ...CommonHeaders.authBearer,
       ...CommonHeaders.jsonApplicationType

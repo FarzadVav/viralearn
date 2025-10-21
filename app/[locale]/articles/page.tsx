@@ -52,7 +52,7 @@ async function ArticlesPage({ searchParams }: PageProps) {
           شما توصیه می‌شوند.
         </p>
         <div className="grid mt-6 grid-cols-1 lg:grid-cols-3 gap-3">
-          {articles.result?.data?.map((item) => (
+          {articles.result?.data.data.map((item) => (
             <div
               key={item.id}
               className="bordered-glassy-card p-3 rounded-2xl space-y-3">
