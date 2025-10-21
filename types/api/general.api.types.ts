@@ -1,6 +1,7 @@
 export type CategoryT = {
   id: number;
   name: string;
+  thumbnail: string;
   children: CategoryT[];
 }
 
