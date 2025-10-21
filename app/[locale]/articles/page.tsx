@@ -1,12 +1,27 @@
 import { SearchIcon } from "lucide-react";
 
 import { Link } from "@/i18n/navigation";
+import { PageProps } from "@/types/app.type"
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { getArticleCategories } from "@/lib/fetches/articlees.fetches";
+import { getArticleCategories, getArticles } from "@/lib/fetches/articlees.fetches";
 
-async function ArticlesPage() {
-  const articleCategories = await getArticleCategories();
+async function ArticlesPage({ searchParams }: PageProps) {
+  const sp = await searchParams;
+
+  const search = sp.search;
+  const category = sp.category;
+
+  const [articleCategories, articles] = await Promise.all([
+    getArticleCategories(),
+    getArticles({
+      blogPostCategoryId: category ? +category : null,
+      keyword: search || "",
+      pageNumber: 1,
+      pageSize: 10,
+      orderBy: [""]
+    })
+  ]);
 
   return (
     <>
@@ -37,24 +52,23 @@ async function ArticlesPage() {
           شما توصیه می‌شوند.
         </p>
         <div className="grid mt-6 grid-cols-1 lg:grid-cols-3 gap-3">
-          {Array.from({ length: 6 }).map((_, i) => (
+          {articles.result?.data?.map((item) => (
             <div
-              key={i}
+              key={item.id}
               className="bordered-glassy-card p-3 rounded-2xl space-y-3">
               <div className="w-full aspect-video bg-background rounded-2xl" />
               <Link
-                href={`/articles/${i}`}
+                href={`/articles/${item.id}`}
                 className="title line-clamp-2 hover:underline">
-                ۲۰ راه حل ساده برای کاهش هزینه های سازمان
+                {item.title}
               </Link>
               <p className="leading-relaxed line-clamp-3">
-                در این بخش ۲۰ روش ساده و کار آمد برای ماهش هزینه های سازمان که توسط موفق
-                ترین کمپانی های دنیا اجرا شده اند ر
+                {item.summery}
               </p>
               <div className="f-align gap-1.5">
                 <div className="size-10 rounded-full bg-background" />
                 <div>
-                  <p className="text-sm">فرزاد وحدتی نژاد</p>
+                  <p className="text-sm">{item.authorName}</p>
                   <p className="text-xs opacity-50">
                     {new Date().toLocaleDateString("fa")}
                   </p>
