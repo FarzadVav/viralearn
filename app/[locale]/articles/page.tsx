@@ -3,8 +3,11 @@ import { SearchIcon } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { getArticleCategories } from "@/lib/fetches/articlees.fetches";
 
-function ArticlesPage() {
+async function ArticlesPage() {
+  const articleCategories = await getArticleCategories();
+
   return (
     <>
       <div className="container mt-6">
@@ -14,11 +17,9 @@ function ArticlesPage() {
       <div className="container">
         <div className="w-full lg:w-max lg:max-w-full f-align gap-1.5 p-1.5 mx-auto mt-40 rounded-full bordered-glassy-card [&>button]:rounded-full overflow-x-auto">
           <Button>همه مقالات</Button>
-          <Button variant={"ghost"}>آموزش مجازی هاور</Button>
-          <Button variant={"ghost"}>آموزش هیبریدی</Button>
-          <Button variant={"ghost"}>ارزشبابی توصیفی</Button>
-          <Button variant={"ghost"}>مدیریت آموزش</Button>
-          <Button variant={"ghost"}>آموزش نوجوانان</Button>
+          {articleCategories.result?.data.map(item => (
+            <Button key={item.id} variant={"ghost"}>{item.title}</Button>
+          ))}
         </div>
         <div className="w-full lg:w-max lg:max-w-full f-align gap-3 mx-auto mt-6">
           <Input placeholder="جستجو..." />
